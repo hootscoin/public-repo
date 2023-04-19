@@ -1,10 +1,181 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Erik has edited this file</title>
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
 
-  </body>
+        body {
+            background-color: #035090;
+            color: #ffffff;
+        }
+        img {
+            width: 30%;
+            height: 30%;
+            object-fit: cover;
+        }
+        h2{ color: #e18433;
+            margin-left: 30%;
+        }
+        input:valid{
+            background: rgb(224, 247, 255);
+        }
+        input:not(:valid){
+            background: rgb(255, 198, 192);
+        }
+        input {
+            display: block;
+            margin-bottom: 20px;
+            margin-left: 7%;
+            width: 50%;
+            color: black  
+        }
+        label {
+            background-color: #2569a0;
+            color: #e18433;
+            margin-bottom: 20px;
+            margin-left: 7%;
+        }
+        #message {
+            font-size: 20px;
+            
+            display: block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-left: 7%;
+            width: 80%;
+            height: 200px;
+        }
+        button {
+            background-color: #ffffff;
+            color: black;
+            margin-bottom: 20px;
+            margin-left: 7%;
+            margin-top: 10px;        
+        }
+        button:hover {
+            color: #c7c7c7
+        }
+        hr.solid {
+        border-top: 3px solid #e18433;
+        }
+        table {
+            width:95%;
+            background-color: #2569a0;
+            border: 2px solid #e18433;
+        }
+        thead {
+            color: #e18433;
+            font-weight:100;
+        }
+        td, th{
+            border: 1px solid white;
+            border-collapse:separate;
+            padding: 10px;
+
+        }
+        table.content-table {
+        margin-left: auto;
+        margin-right: auto;
+        }
+        
+
+    </style>
+
+    <script src="Email_Service_Training.js" ></script>
+    <script>
+        var inputField = document.getElementById("sender");
+        inputField.addEventListener("sender", function() {
+          var inputValue = inputField.value;
+          saveInputValueFunktion(inputValue); // Call a function in your JS file to save the value
+        });
+      </script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <img src="S:\Daten\User\Student1\Erik Esins\Praktikums Project Email Service\SD Nord Programmiert Logo Screenshot.png"     "C:\ERIKs ZEUG\Programming etz\SD Nord Programmiert\SD Nord Programmiert Logo Screenshot.png" alt="SD Nord Programmiert Logo Screenshot.png"> -->
+    <img src="C:\ERIKs ZEUG\Programming etz\SD Nord Programmiert\SD Nord Programmiert Logo Screenshot.png" alt="SD Nord Programmiert Logo Screenshot.png">
+    <h2>HTML-Page for sending Emails</h2>
+
+<form id="form1" action="" onsubmit=validateFormFunction()>
+
+    <input type="email" id="sender" name="sender"  required placeholder="Enter your Email">
+    <input type="email" id="receiver" name="receiver" required placeholder="Enter the Reseiver-Email">
+    <input type="email" id="cc" name="cc"  placeholder="CC: Add Emails" multiple>
+    <input type="email" id="bcc" name="bcc" placeholder="BCC: Add Emails" multiple>
+    <input type="text"  id="subject" name="subject"  required placeholder="Subject:">
+    <textarea id="message" name="message" rows="4" cols="50" placeholder="Your Message:"></textarea>
+    
+    <label for="file">Select a file:</label>
+    <input type="file" id="attachment" name="attachment" multiple> 
+
+    <button type="submit" >submit</button>
+    <button id="testButton" type="button" onclick="testButtonFunction()" >testButton</button>
+
+    <hr class="solid" hr>
+
+</form>
+<form id="form2" action="" >
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th colspan="7">Information Table</th>
+            </tr>
+            <tr>
+                <th>Sender:</th>
+                <th>Reseiver:</th>
+                <th>CC:</th>
+                <th>BCC:</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Attachment/s:</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Value1</td>
+            <td>Value2</td>
+            <td>Value3</td>
+            <td>Value4</td>
+            <td>Value5</td>
+            <td>Value6</td>
+            <td>Value7</td>
+        </tr>
+    </tbody>
+    </table>
+</form>
+ 
+</body>
 </html>
+
+
+
+
+
+
+
+    <!--
+    </script> <script src="C:\ERIKs ZEUG\Programming etz\SD Nord Programmiert\Email_Service_Training.js"></script> 
+  -->
+
+    <!-- !!!!! OLD HTML:   !!!!!!!
+
+        <label for="sender">Sender:</label>
+    <input type="email" id="sender" value="" name="senderEmailField" placeholder="Enter your Email">
+
+    <label for="receiver">Receiver:</label>
+    <input type="text" id="receiver" name="receiverEmailField" placeholder="Enter the Reseiver-Email">
+  
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subjectEmailField" placeholder="Explain the Subject">
+  
+    <label for="messageBox">Message:</label>
+    <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
+  
+    <button id="button1" type="button" onclick="emailCheck()">clickme</button>
+    <button id="testButton" type="button" onclick="testButtonFunction()" >testButton</button> 
+
+    -->
