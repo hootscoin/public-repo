@@ -29,7 +29,7 @@
             margin-bottom: 20px;
             margin-left: 7%;
             width: 50%;
-            color: black  
+            color: black
         }
         label {
             background-color: #2569a0;
@@ -39,7 +39,7 @@
         }
         #message {
             font-size: 20px;
-            
+
             display: block;
             margin-bottom: 20px;
             margin-top: 20px;
@@ -52,7 +52,7 @@
             color: black;
             margin-bottom: 20px;
             margin-left: 7%;
-            margin-top: 10px;        
+            margin-top: 10px;
         }
         button:hover {
             color: #c7c7c7
@@ -79,18 +79,12 @@
         margin-left: auto;
         margin-right: auto;
         }
-        
+
 
     </style>
 
-    <script src="Email_Service_Training.js" ></script>
-    <script>
-        var inputField = document.getElementById("sender");
-        inputField.addEventListener("sender", function() {
-          var inputValue = inputField.value;
-          saveInputValueFunktion(inputValue); // Call a function in your JS file to save the value
-        });
-      </script>
+<!--    <script src="Email_Service_Training.js" ></script>  -->
+
     <title>Document</title>
 </head>
 <body>
@@ -102,14 +96,14 @@
 <form id="form1" action="" onsubmit=validateFormFunction()>
 
     <input type="email" id="sender" name="sender"  required placeholder="Enter your Email">
-    <input type="email" id="receiver" name="receiver" required placeholder="Enter the Reseiver-Email">
+    <input type="email" id="receiver" name="receiver" required placeholder="Enter the Receiver-Email">
     <input type="email" id="cc" name="cc"  placeholder="CC: Add Emails" multiple>
     <input type="email" id="bcc" name="bcc" placeholder="BCC: Add Emails" multiple>
     <input type="text"  id="subject" name="subject"  required placeholder="Subject:">
     <textarea id="message" name="message" rows="4" cols="50" placeholder="Your Message:"></textarea>
-    
+
     <label for="file">Select a file:</label>
-    <input type="file" id="attachment" name="attachment" multiple> 
+    <input type="file" id="attachment" name="attachment" multiple>
 
     <button type="submit" >submit</button>
     <button id="testButton" type="button" onclick="testButtonFunction()" >testButton</button>
@@ -119,7 +113,7 @@
 </form>
 <form id="form2" action="" >
 
-    <table class="content-table">
+    <table id="table_id" class="content-table">
         <thead>
             <tr>
                 <th colspan="7">Information Table</th>
@@ -134,7 +128,7 @@
                 <th>Attachment/s:</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="table_body_id">
         <tr>
             <td>Value1</td>
             <td>Value2</td>
@@ -147,7 +141,35 @@
     </tbody>
     </table>
 </form>
- 
+
+
+<script>
+function testButtonFunction(){
+  var table = document.getElementById("table_id");
+  var row = table.insertRow(3);
+
+  var cell = row.insertCell(0);
+var cell1 = row.insertCell(1);
+var cell2 = row.insertCell(2);
+var cell3 = row.insertCell(3);
+var cell4 = row.insertCell(4);
+var cell5 = row.insertCell(5);
+var cell6 = row.insertCell(6);
+
+cell.innerHTML ="Cell1";
+cell1.innerHTML ="Cell2";
+cell2.innerHTML ="Cell3";
+cell3.innerHTML ="Cell4";
+cell4.innerHTML ="Cell5";
+cell5.innerHTML ="Cell6";
+cell6.innerHTML ="Cell7";
+
+}
+
+
+
+</script>
+
 </body>
 </html>
 
@@ -158,7 +180,7 @@
 
 
     <!--
-    </script> <script src="C:\ERIKs ZEUG\Programming etz\SD Nord Programmiert\Email_Service_Training.js"></script> 
+    </script> <script src="C:\ERIKs ZEUG\Programming etz\SD Nord Programmiert\Email_Service_Training.js"></script>
   -->
 
     <!-- !!!!! OLD HTML:   !!!!!!!
@@ -168,14 +190,14 @@
 
     <label for="receiver">Receiver:</label>
     <input type="text" id="receiver" name="receiverEmailField" placeholder="Enter the Reseiver-Email">
-  
+
     <label for="subject">Subject:</label>
     <input type="text" id="subject" name="subjectEmailField" placeholder="Explain the Subject">
-  
+
     <label for="messageBox">Message:</label>
     <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
-  
+
     <button id="button1" type="button" onclick="emailCheck()">clickme</button>
-    <button id="testButton" type="button" onclick="testButtonFunction()" >testButton</button> 
+    <button id="testButton" type="button" onclick="testButtonFunction()" >testButton</button>
 
     -->
