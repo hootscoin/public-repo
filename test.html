@@ -4,99 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background-color: #035090;
-            color: #ffffff;
-        }
-        img {
-            width: 30%;
-            height: 30%;
-            object-fit: cover;
-        }
-        h2 { color: #e18433;
-            margin-left: 30%;
-        }
-        input:valid{
-            background: rgb(224, 247, 255);
-        }
-        input:not(:valid){
-            background: rgb(255, 198, 192);
-        }
-        input {
-            display: block;
-            margin-bottom: 20px;
-            margin-left: 7%;
-            width: 50%;
-            color: black
-        }
-        label {
-            background-color: #2569a0;
-            color: #e18433;
-            margin-bottom: 20px;
-            margin-left: 7%;
-        }
-        #message {
-            font-size: 20px;
-
-            display: block;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            margin-left: 7%;
-            width: 80%;
-            height: 200px;
-        }
-        button {
-            background-color: #ffffff;
-            color: black;
-            margin-bottom: 20px;
-            margin-left: 7%;
-            margin-top: 10px;
-        }
-        button:hover {
-            color: #c7c7c7
-        }
-        hr.solid {
-        border-top: 3px solid #e18433;
-        }
-        table {
-            width:95%;
-            background-color: #2569a0;
-            border: 2px solid #e18433;
-            border-collapse: collapse;
-        }
-        thead {
-            color: #e18433;
-            font-weight:100;
-        }
-        tbody {
-            color: white;
-            font-weight:100;
-        } 
-        th {
-            border: 1px solid white;
-            border-collapse:separate;
-            padding: 10px;
-            width: 12%
-        }
-        td {
-            border: 1px solid white;
-            border-collapse:separate;
-            padding: 10px;
-        }
-        table.content-table {
-        margin-left: auto;
-        margin-right: auto;
-        }
-    </style>
-
-    <script src="Email_Service_Training.js" ></script>  
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="Email_Service_Training.js" ></script> 
+    <img src="SD Nord Programmiert Logo Screenshot.png" alt="SD Nord Programmiert Logo Screenshot.png"> 
     <title>Document</title>
 </head>
 <body>
-        <!-- <img src="S:\Daten\User\Student1\Erik Esins\Praktikums Project Email Service\SD Nord Programmiert Logo Screenshot.png"     "C:\ERIKs ZEUG\Programming etz\SD Nord Programmiert\SD Nord Programmiert Logo Screenshot.png" alt="SD Nord Programmiert Logo Screenshot.png"> -->
-        <img src="S:\Daten\User\Student1\Erik Esins\Praktikums Project Email Service\SD Nord Programmiert Logo Screenshot.png" alt="SD Nord Programmiert Logo Screenshot.png">
-        <h2>HTML-Page for sending Emails</h2>
+    
+    <h2>HTML-Page for sending Emails</h2>
 
     <form id="form1" action="" onsubmit="validateFormFunction(); return false;">
         <input      type="email" id="sender" name="sender"  required placeholder="Enter your Email">
@@ -107,7 +23,7 @@
         <textarea   id="message" name="message" rows="4" cols="50" placeholder="Your Message:"></textarea>
         <label      for="file">Select a file:</label>
         <input      type="file" id="attachment" name="attachment"  multiple>
-        <button     id="testButton" type="button" onclick="testButtonFunction()" >confirm</button>
+        <button     id="testButton" type="button" onclick="confirmButtonFunction()" >confirm</button>
         <hr         class="solid" hr>
     </form>
 
@@ -115,9 +31,10 @@
         <table id="table_id" class="content-table">
             <thead id="table_head_id">
                 <tr>
-                    <th colspan="7">Information Table</th>
+                    <th colspan="8" id="tableMainHead">Information Table</th>
                 </tr>
                 <tr>
+                    <th>Entry Nr:</th>
                     <th>Sender:</th>
                     <th>Reseiver:</th>
                     <th>CC:</th>
@@ -129,43 +46,18 @@
             </thead>
             <tbody id="table_body_id">
                 <tr>
-                    <td>Value1</td>
-                    <td>Value2</td>
-                    <td>Value3</td>
-                    <td>Value4</td>
-                    <td>Value5</td>
-                    <td>Value6</td>
-                    <td>Value7</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
     </form>
 
-    <script>
-        function testButtonFunction(){
-            if (validateFormFunction()){
-                var table = document.getElementById("table_id");
-                var row = table.insertRow(3);
-
-                var cell = row.insertCell(0);
-                var cell1 = row.insertCell(1);
-                var cell2 = row.insertCell(2);
-                var cell3 = row.insertCell(3);
-                var cell4 = row.insertCell(4);
-                var cell5 = row.insertCell(5);
-                var cell6 = row.insertCell(6);
-
-                cell.innerHTML  = document.getElementById("sender").value;
-                cell1.innerHTML = document.getElementById("receiver").value;
-                cell2.innerHTML = document.getElementById("cc").value;
-                cell3.innerHTML = document.getElementById("bcc").value;
-                cell4.innerHTML = document.getElementById("subject").value;
-                cell5.innerHTML = document.getElementById("message").value;
-                cell6.innerHTML = document.getElementById("attachment").value;
-            }
-            else console.log("Inputfiels are not valid! Table not created!");
-            return false;
-        }
-    </script>
 </body>
 </html>
