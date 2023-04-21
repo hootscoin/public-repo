@@ -3,14 +3,19 @@
             background-color: #035090;
             color: #ffffff;
             font-family: "OpenSans";
+            overflow-x: auto;
+            max-width:60cm;
         }
         img {
-            width: 30%;
-            height: 30%;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
         }
         h2 { color: #e18433;
-            margin-left: 30%;
+            text-align: center;
+            font-size: 300%;
+        }
+        form {
+            text-align: left;
         }
         input:valid{
             background: rgb(224, 247, 255);
@@ -20,22 +25,20 @@
         }
         input {
             display: block;
+            font-size: 150%;
+            padding: 10px 20px;
             margin-bottom: 20px;
             margin-left: 7%;
-            width: 50%;
-            height: 20px;
+            width: 80%;
+            height: 30px;
+            max-width: 99%;
+            height: 30px;
             color: black
         }
-        label {
-            background-color: #2569a0;
-            color: #e18433;
-            margin-bottom: 20px;
-            margin-left: 7%;
-        }
         #message {
-            font-size: 20px;
-
+            font-size: 300%;
             display: block;
+            padding: 10px 20px;
             margin-bottom: 20px;
             margin-top: 20px;
             margin-left: 7%;
@@ -45,9 +48,15 @@
         button {
             background-color: #ffffff;
             color: black;
+            font-size:150%;
+            width: 8%;
+            height: 200%;
+            min-width:3cm;
+            min-height:1.4cm;
             margin-bottom: 20px;
             margin-left: 7%;
             margin-top: 10px;
+            
         }
         button:hover {
             color: #c7c7c7
@@ -55,11 +64,15 @@
         hr.solid {
         border-top: 3px solid #e18433;
         }
+        .tableContainer{
+            overflow: hidden;
+        }   
         table {
             width:99%;
             background-color: #2569a0;
             border: 2px solid #e18433;
             border-collapse: collapse;
+            font-size: 150%;
         }
         thead {
             color: #e18433;
@@ -71,26 +84,32 @@
             border: 1px solid white;
             border-collapse:separate;
             padding: 35px;
-            font-size:x-large;
+            font-size:180%;
+            width: 99%;
         }
-        tbody {
-            color: white;
-            font-weight:100;
-        } 
         th {
             font-size:large;
             border: 1px solid white;
-            border-collapse:separate;
+            font-size:110%;
             padding: 10px;
             width: 12% 
-            
         }
         td {
             border: 1px solid white;
-            border-collapse:separate;
             padding: 10px;
+            font-size:100%;
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        table.content-table {
-        margin-left: auto;
-        margin-right: auto;
+        #tableIdNr{
+            width: 3%;
         }
+
+
+
+
+        /*
+        
+        */
