@@ -15,33 +15,33 @@
     <h2>HTML-Page for sending Emails</h2>
 
     <form id="form1" action="" onsubmit="validateFormFunction(); return false;">
+        
         <input      type="email" id="sender" name="sender"  required placeholder="Enter your Email">
         <input      type="email" id="receiver" name="receiver" required placeholder="Enter the Receiver-Email">
         <input      type="email" id="cc" name="cc"  placeholder="CC: Add Email-Addresses" multiple>
         <input      type="email" id="bcc" name="bcc" placeholder="BCC: Add Email-Addresses" multiple>
         <input      type="text"  id="subject" name="subject"  required placeholder="Subject:">
         <textarea   id="message" name="message" rows="4" cols="50" placeholder="Your Message:"></textarea>
-        <label      for="file">Select a file:</label>
         <input      type="file" id="attachment" name="attachment"  multiple>
         <button     id="testButton" type="button" onclick="confirmButtonFunction()" >confirm</button>
         <hr         class="solid" hr>
     </form>
 
-    <form id="form2" action="" >
+    <div class="tableContainer" >
         <table id="table_id" class="content-table">
             <thead id="table_head_id">
                 <tr>
                     <th colspan="8" id="tableMainHead">Information Table</th>
                 </tr>
                 <tr>
-                    <th>Entry Nr:</th>
+                    <th id="tableIdNr">Entry Nr:</th>
                     <th>Sender:</th>
                     <th>Reseiver:</th>
                     <th>CC:</th>
                     <th>BCC:</th>
                     <th>Subject</th>
                     <th>Message</th>
-                    <th>Attachment/s:</th>
+                    <th>Attachments:</th>
                 </tr>
             </thead>
             <tbody id="table_body_id">
@@ -57,7 +57,7 @@
                 </tr>
             </tbody>
         </table>
-    </form>
+    </div>
 
 </body>
 </html>
